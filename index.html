@@ -1,0 +1,58 @@
+<doctype html>
+    <html>
+
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/styles.css" />
+        <title>Lab 3</title>
+    </head>
+
+    <body>
+
+        <div id="app">
+            <div v-if="loading">
+                <div style="background-color:rgb(245, 255, 255); padding: 50px">
+                    <h2>Couplet Generator</h2>
+                    <p>Type in two rhyming words, and I'll generate a random couplet for you.</p>
+                </div>
+                <div style="padding: 50px">
+                <p>Loading...</p>
+                </div>
+            </div>
+            <div v-else>
+                <div style="background-color:rgb(245, 255, 255); padding: 50px">
+                    <h2>Couplet Generator</h2>
+                    <p>Type in two rhyming words, and I'll generate a random couplet for you.</p>
+                </div>
+                <div style="padding: 50px">
+                    <form v-on:submit.prevent="generatePoem">
+                        <input v-model="term1" placeholder="Word 1"></p>
+                        <input v-model="term2" placeholder="Word 2"></p>
+                        <br />
+                        <button v-on:click="generatePoem">Generate Poem</button>
+                    </form>
+                    <br>
+                    <p>{{poemLine1}}</p>
+                    <p>{{poemLine2}}</p>
+                </div>
+            </div>
+        </div>
+
+        <footer id="sticky-footer" class="py-4 text-white-50">
+            <div class="container text-center">
+                <small style="color: black">GitHub repository: <a href="https://github.com/tjfarns/vuecreative">tjfarns260</a></small>
+            </div>
+        </footer>
+
+        <script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js " integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 " crossorigin="anonymous "></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js " integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy " crossorigin="anonymous "></script>
+        <script src="script.js"></script>
+
+    </body>
+
+    </html>
+</doctype>
